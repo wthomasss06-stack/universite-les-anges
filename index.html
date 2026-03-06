@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Université des Anges</title>
+    <meta name="description" content="Université publique pluridisciplinaire de formation">
+    <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./static/css/custom.css">
+    
+<style>
+@media (max-width: 1024px) {
+    :root { --navbar-height-mobile: 60px; }
+    .navbar { height: var(--navbar-height-mobile); padding: 0; }
+    .navbar .container { height: 100%; padding: 0 0.5rem; }
+    .navbar-brand { height: 100%; min-height: auto; flex: 1; max-width: calc(100% - 60px); }
+    .navbar-logo { padding: 0.5rem 0; gap: 0.3rem; flex-shrink: 1; }
+    .logo-image { height: 30px; }
+    .logo-text strong { font-size: 0.8rem; white-space: nowrap; }
+    .logo-text small { display: none; }
+    .navbar-burger { height: var(--navbar-height-mobile); width: 60px; padding: 0; margin-left: auto; margin-right: 0; position: relative; display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: rgba(79,70,229,0.08); border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; flex-shrink: 0; }
+    .navbar-burger:hover { background-color: rgba(79,70,229,0.15); }
+    .navbar-burger span { width: 26px; height: 3px; background-color: #4f46e5; display: block; transition: all 0.3s cubic-bezier(0.645,0.045,0.355,1); border-radius: 3px; }
+    .navbar-burger.is-active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .navbar-burger.is-active span:nth-child(2) { opacity: 0; transform: translateX(-20px); }
+    .navbar-burger.is-active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    .navbar-menu { position: fixed; top: var(--navbar-height-mobile); left: 0; right: 0; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); z-index: 999; }
+    .navbar-menu.is-active { max-height: calc(100vh - var(--navbar-height-mobile)); overflow-y: auto; opacity: 1; visibility: visible; padding: 1rem 0; }
+    .navbar-end { display: flex; flex-direction: column; }
+    .navbar-item { padding: 0.875rem 1.25rem; font-size: 0.9375rem; }
+    .navbar-cta { margin: 0.75rem 1.25rem; width: calc(100% - 2.5rem); padding: 0.875rem 1.25rem !important; }
+    .main-content { padding-top: var(--navbar-height-mobile); }
+}
+.scroll-top-btn { position: fixed; bottom: 80px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 2px solid white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175,0.885,0.32,1.275); z-index: 9999; box-shadow: 0 6px 20px rgba(102,126,234,0.5); }
+.scroll-top-btn:hover { transform: translateY(-5px) scale(1.1); }
+.scroll-top-btn .material-icons { color: white; font-size: 28px; }
+@media(max-width:768px){ .footer-top{padding:2.5rem 0 1.5rem;} .footer-brand{text-align:center;margin-bottom:1.5rem;} .footer-logo{height:40px;margin:0 auto;} .social-links{justify-content:center;} .footer-bottom .columns{flex-direction:column;gap:.5rem;} .footer-bottom .column{text-align:center!important;} }
+</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"><style>
+.hero-carousel{position:relative;height:600px;overflow:hidden;}
+.swiper{width:100%;height:100%;}
+.swiper-slide{background-size:cover;background-position:center;position:relative;}
+.swiper-slide::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,70,229,0.9) 0%,rgba(139,92,246,0.8) 100%);}
+.hero-content{position:relative;z-index:10;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;}
+.hero-content h1{font-size:3.5rem;font-weight:800;color:white;margin-bottom:1.5rem;animation:slideInDown 1s ease-out;}
+.hero-content p{font-size:1.5rem;color:rgba(255,255,255,0.95);margin-bottom:2rem;animation:slideInUp 1s ease-out 0.3s both;}
+.hero-content .buttons{animation:fadeIn 1s ease-out 0.6s both;}
+.swiper-button-next,.swiper-button-prev{color:white!important;background:rgba(255,255,255,0.2);width:50px;height:50px;border-radius:50%;backdrop-filter:blur(10px);}
+.swiper-pagination-bullet{width:12px;height:12px;background:white;opacity:.5;}
+.swiper-pagination-bullet-active{opacity:1;}
+@keyframes slideInDown{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:768px){.hero-carousel{height:500px;}.hero-content h1{font-size:2rem;}.hero-content p{font-size:1.0625rem;}.hero-content .buttons{flex-direction:column;gap:1rem;}.hero-content .button{width:100%;justify-content:center;}.swiper-button-next,.swiper-button-prev{display:none;}}
+@media(max-width:480px){.hero-carousel{height:400px;}.hero-content h1{font-size:1.5rem;}.hero-content p{font-size:.9375rem;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="./index.html">
+                <img src="./static/images/logo.svg" alt="Université des Anges" class="logo-image">
+                <span class="logo-text"><strong>UNIVERSITÉ</strong><small>des Anges</small></span>
+            </a>
+            <button role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end"><a class="navbar-item is-active" href="./"><span class="icon"><span class="material-icons">home</span></span><span>Accueil</span></a>
+<a class="navbar-item" href="./actualites/"><span class="icon"><span class="material-icons">article</span></span><span>Actualités</span></a>
+<a class="navbar-item" href="./formations/"><span class="icon"><span class="material-icons">school</span></span><span>Formations</span></a>
+<a class="navbar-item" href="./a-propos.html"><span class="icon"><span class="material-icons">info</span></span><span>À propos</span></a>
+<a class="navbar-item navbar-cta" href="./contact.html"><span class="icon"><span class="material-icons">mail</span></span><span>Contact</span></a>
+</div>
+        </div>
+    </div>
+</nav>
+<main class="main-content">
+
+<div class="hero-carousel">
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920')">
+                <div class="hero-content"><div class="container">
+                    <h1>Bienvenue à l'Université des Anges</h1>
+                    <p>Excellence, Innovation, Avenir</p>
+                    <div class="buttons">
+                        <a href="./formations/" class="button is-white is-large is-outlined"><span class="icon"><span class="material-icons">school</span></span><span>Nos Formations</span></a>
+                        <a href="./contact.html" class="button is-white is-large"><span class="icon"><span class="material-icons">mail</span></span><span>Nous Contacter</span></a>
+                    </div>
+                </div></div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920')">
+                <div class="hero-content"><div class="container">
+                    <h1>Formation 100% en Ligne</h1>
+                    <p>Apprenez où vous voulez, quand vous voulez</p>
+                    <div class="buttons">
+                        <a href="./formations/" class="button is-white is-large"><span>Découvrir</span><span class="icon"><span class="material-icons">arrow_forward</span></span></a>
+                    </div>
+                </div></div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1920')">
+                <div class="hero-content"><div class="container">
+                    <h1>Diplômes Reconnus</h1>
+                    <p>Certifications internationales et diplômes d'État</p>
+                    <div class="buttons">
+                        <a href="./a-propos.html" class="button is-white is-large is-outlined">En savoir plus</a>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-3-desktop is-6-tablet"><div class="stat-card"><span class="stat-number" data-target="5000">0</span><span class="stat-label">Étudiants</span></div></div>
+            <div class="column is-3-desktop is-6-tablet"><div class="stat-card"><span class="stat-number" data-target="50">0</span><span class="stat-label">Formations</span></div></div>
+            <div class="column is-3-desktop is-6-tablet"><div class="stat-card"><span class="stat-number" data-target="95">0</span><span class="stat-label">% Réussite</span></div></div>
+            <div class="column is-3-desktop is-6-tablet"><div class="stat-card"><span class="stat-number" data-target="200">0</span><span class="stat-label">Partenaires</span></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding:5rem 1.5rem;">
+    <div class="container">
+        <div class="has-text-centered mb-6">
+            <h2 class="title is-1 text-gradient">Pourquoi Nous Choisir ?</h2>
+            <p class="subtitle is-4">Des avantages qui font la différence</p>
+        </div>
+        <div class="columns is-multiline">
+            <div class="column is-4-desktop is-6-tablet"><div class="feature-card"><div class="feature-icon"><span class="material-icons">laptop_mac</span></div><h3 class="title is-4">100% En Ligne</h3><p>Étudiez depuis n'importe où avec notre plateforme moderne et interactive</p></div></div>
+            <div class="column is-4-desktop is-6-tablet"><div class="feature-card"><div class="feature-icon"><span class="material-icons">workspace_premium</span></div><h3 class="title is-4">Diplômes Reconnus</h3><p>Certifications internationales et diplômes reconnus par l'État</p></div></div>
+            <div class="column is-4-desktop is-6-tablet"><div class="feature-card"><div class="feature-icon"><span class="material-icons">groups</span></div><h3 class="title is-4">Accompagnement</h3><p>Mentorat personnalisé et suivi régulier par nos experts</p></div></div>
+            <div class="column is-4-desktop is-6-tablet"><div class="feature-card"><div class="feature-icon"><span class="material-icons">business_center</span></div><h3 class="title is-4">Insertion Pro</h3><p>95% d'insertion professionnelle dans les 6 mois</p></div></div>
+            <div class="column is-4-desktop is-6-tablet"><div class="feature-card"><div class="feature-icon"><span class="material-icons">public</span></div><h3 class="title is-4">Réseau International</h3><p>Partenariats avec plus de 50 universités dans le monde</p></div></div>
+            <div class="column is-4-desktop is-6-tablet"><div class="feature-card"><div class="feature-icon"><span class="material-icons">account_balance_wallet</span></div><h3 class="title is-4">Tarifs Accessibles</h3><p>Facilités de paiement et bourses disponibles</p></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section has-background-light">
+    <div class="container">
+        <div class="has-text-centered mb-6">
+            <h2 class="title is-2 text-gradient">Dernières Actualités</h2>
+            <p class="subtitle is-5">Restez informés de nos dernières nouvelles</p>
+        </div>
+        <div class="columns is-multiline">
+<div class="column is-4-desktop is-6-tablet">
+    <div class="card hover-lift">
+        <div class="card-image">
+            <figure class="image is-16by9">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80" alt="Rentrée académique 2025-2026" style="width:100%;height:100%;object-fit:cover;">
+            </figure>
+        </div>
+        <div class="card-content">
+            <span class="tag is-danger mb-3">Annonce</span>
+            <p class="title is-5">Rentrée académique 2025-2026</p>
+            <p class="subtitle is-6 has-text-grey">
+                <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>15 Sep 2025</span></span>
+            </p>
+            <div class="content">L'Université des Anges ouvre ses portes pour la nouvelle année académique avec de nouvelles formations et un campus numérique rénové.</div>
+            <a href="./actualites/rentree-academique-2025.html" class="button is-primary is-fullwidth">
+                Lire la suite <span class="icon"><span class="material-icons">arrow_forward</span></span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="column is-4-desktop is-6-tablet">
+    <div class="card hover-lift">
+        <div class="card-image">
+            <figure class="image is-16by9">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="Partenariat avec l'Université de Lyon" style="width:100%;height:100%;object-fit:cover;">
+            </figure>
+        </div>
+        <div class="card-content">
+            <span class="tag is-success mb-3">Partenariat</span>
+            <p class="title is-5">Partenariat avec l'Université de Lyon</p>
+            <p class="subtitle is-6 has-text-grey">
+                <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>02 Oct 2025</span></span>
+            </p>
+            <div class="content">Un accord de coopération académique historique a été signé permettant des échanges d'étudiants et de professeurs.</div>
+            <a href="./actualites/partenariat-lyon.html" class="button is-primary is-fullwidth">
+                Lire la suite <span class="icon"><span class="material-icons">arrow_forward</span></span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="column is-4-desktop is-6-tablet">
+    <div class="card hover-lift">
+        <div class="card-image">
+            <figure class="image is-16by9">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Forum des métiers du numérique" style="width:100%;height:100%;object-fit:cover;">
+            </figure>
+        </div>
+        <div class="card-content">
+            <span class="tag is-info mb-3">Événement</span>
+            <p class="title is-5">Forum des métiers du numérique</p>
+            <p class="subtitle is-6 has-text-grey">
+                <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>20 Nov 2025</span></span>
+            </p>
+            <div class="content">Rencontrez les grandes entreprises tech d'Afrique et d'Europe lors de notre forum annuel dédié aux carrières dans le numérique.</div>
+            <a href="./actualites/forum-metiers-numerique.html" class="button is-primary is-fullwidth">
+                Lire la suite <span class="icon"><span class="material-icons">arrow_forward</span></span>
+            </a>
+        </div>
+    </div>
+</div></div>
+        <div class="has-text-centered mt-5">
+            <a href="./actualites/" class="button is-primary is-large">Toutes les actualités<span class="icon"><span class="material-icons">arrow_forward</span></span></a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="has-text-centered mb-6">
+            <h2 class="title is-2 text-gradient">Ce Qu'ils Disent de Nous</h2>
+            <p class="subtitle is-5">Témoignages de nos étudiants et alumni</p>
+        </div>
+        <div class="columns is-multiline">
+            <div class="column is-4-desktop is-6-tablet"><div class="testimonial-card"><span class="material-icons testimonial-quote">format_quote</span><p class="testimonial-text">"L'Université des Anges m'a permis de me former tout en travaillant. Les cours en ligne sont de qualité et les enseignants très disponibles!"</p><div class="testimonial-author"><div class="author-avatar">AK</div><div><p class="has-text-weight-bold">Aya Koné</p><p class="is-size-7 has-text-grey">Licence Développement Web · Promo 2024</p></div></div></div></div>
+            <div class="column is-4-desktop is-6-tablet"><div class="testimonial-card"><span class="material-icons testimonial-quote">format_quote</span><p class="testimonial-text">"Grâce au Master Big Data, j'ai décroché un poste de Data Scientist dans une multinationale. Formation de très haut niveau!"</p><div class="testimonial-author"><div class="author-avatar">KT</div><div><p class="has-text-weight-bold">Kouadio Tanoh</p><p class="is-size-7 has-text-grey">Master Big Data · Promo 2023</p></div></div></div></div>
+            <div class="column is-4-desktop is-6-tablet"><div class="testimonial-card"><span class="material-icons testimonial-quote">format_quote</span><p class="testimonial-text">"Les partenariats internationaux m'ont permis d'obtenir des certifications Microsoft gratuitement. Un vrai plus sur le CV!"</p><div class="testimonial-author"><div class="author-avatar">FM</div><div><p class="has-text-weight-bold">Fatou Mbaye</p><p class="is-size-7 has-text-grey">Licence Cybersécurité · Promo 2025</p></div></div></div></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Galerie Campus -->
+<section class="section" style="padding:4rem 1.5rem;">
+    <div class="container">
+        <div class="has-text-centered mb-6">
+            <h2 class="title is-2 text-gradient">Notre Campus & Vie Étudiante</h2>
+            <p class="subtitle is-5">Un environnement d'apprentissage moderne et stimulant</p>
+        </div>
+        <div class="columns is-multiline" style="gap:0;">
+            <div class="column is-8" style="padding:0.4rem;">
+                <div style="height:350px;overflow:hidden;border-radius:12px;">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80" alt="Campus" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+            <div class="column is-4" style="padding:0.4rem;">
+                <div style="height:168px;overflow:hidden;border-radius:12px;margin-bottom:0.8rem;">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="Étudiants" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div style="height:168px;overflow:hidden;border-radius:12px;">
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80" alt="Bibliothèque" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+            <div class="column is-4" style="padding:0.4rem;">
+                <div style="height:200px;overflow:hidden;border-radius:12px;">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Équipe" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+            <div class="column is-4" style="padding:0.4rem;">
+                <div style="height:200px;overflow:hidden;border-radius:12px;">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&q=80" alt="Salle de cours" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+            <div class="column is-4" style="padding:0.4rem;">
+                <div style="height:200px;overflow:hidden;border-radius:12px;">
+                    <img src="https://images.unsplash.com/photo-1627556592933-35b8a5b2523c?w=600&q=80" alt="Remise de diplômes" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-section">
+    <div class="cta-content"><div class="container has-text-centered">
+        <h2 class="title is-1 has-text-white mb-5">Prêt à Transformer Votre Avenir ?</h2>
+        <p class="subtitle is-4 has-text-white mb-6">Rejoignez les milliers d'étudiants qui ont choisi l'excellence</p>
+        <div class="buttons is-centered">
+            <a href="./formations/" class="button is-white is-large"><span class="icon"><span class="material-icons">rocket_launch</span></span><span>Découvrir nos formations</span></a>
+            <a href="./contact.html" class="button is-white is-large is-outlined"><span class="icon"><span class="material-icons">phone</span></span><span>Contactez-nous</span></a>
+        </div>
+    </div></div>
+</section>
+</main>
+
+<footer class="footer-premium">
+    <div class="footer-top">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12-mobile is-4-tablet">
+                    <div class="footer-brand">
+                        <img src="./static/images/logo.svg" alt="Université des Anges" class="footer-logo">
+                        <h4 class="title is-5 has-text-white mt-3">Université des Anges</h4>
+                        <p class="footer-tagline">Excellence et innovation au service de la formation et du développement.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="social-link" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+                            <a href="#" class="social-link" aria-label="Twitter"><span class="material-icons">send</span></a>
+                            <a href="#" class="social-link" aria-label="LinkedIn"><span class="material-icons">work</span></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6-mobile is-3-tablet">
+                    <h4 class="footer-title">Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="./index.html"><span class="material-icons">chevron_right</span> Accueil</a></li>
+                        <li><a href="./actualites/"><span class="material-icons">chevron_right</span> Actualités</a></li>
+                        <li><a href="./formations/"><span class="material-icons">chevron_right</span> Formations</a></li>
+                        <li><a href="./a-propos.html"><span class="material-icons">chevron_right</span> À propos</a></li>
+                        <li><a href="./contact.html"><span class="material-icons">chevron_right</span> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="column is-6-mobile is-2-tablet">
+                    <h4 class="footer-title">Ressources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><span class="material-icons">chevron_right</span> FAQ</a></li>
+                        <li><a href="#"><span class="material-icons">chevron_right</span> Support</a></li>
+                        <li><a href="#"><span class="material-icons">chevron_right</span> Blog</a></li>
+                        <li><a href="#"><span class="material-icons">chevron_right</span> Portail</a></li>
+                    </ul>
+                </div>
+                <div class="column is-12-mobile is-3-tablet">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><span class="material-icons">location_on</span><span>Cocody, Boulevard Latrille<br>Abidjan, Côte d'Ivoire</span></li>
+                        <li><span class="material-icons">phone</span><span>+225 27 XX XX XX XX</span></li>
+                        <li><span class="material-icons">mail</span><span>contact@universite-des-anges.ci</span></li>
+                        <li><span class="material-icons">schedule</span><span>Lun - Ven : 8h - 17h<br>Samedi : 8h - 12h</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="columns is-vcentered is-mobile">
+                <div class="column">
+                    <p class="copyright">&copy; 2026 Université des Anges. Tous droits réservés.</p>
+                </div>
+                <div class="column has-text-right">
+                    <a href="./mentions-legales.html" class="footer-legal">Mentions légales</a>
+                    <span class="footer-separator">|</span>
+                    <a href="./politique-confidentialite.html" class="footer-legal">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<button id="scrollTop" class="scroll-top-btn" aria-label="Retour en haut">
+    <span class="material-icons">arrow_upward</span>
+</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.getElementById('navbarMenu');
+    if (burger && menu) {
+        burger.addEventListener('click', (e) => {
+            e.preventDefault();
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+            if (window.innerWidth <= 1024) {
+                document.body.style.overflow = menu.classList.contains('is-active') ? 'hidden' : '';
+            }
+        });
+        menu.querySelectorAll('.navbar-item').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    burger.classList.remove('is-active');
+                    menu.classList.remove('is-active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    }
+    const scrollTopBtn = document.getElementById('scrollTop');
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    function adjustMainPadding() {
+        const nb = document.querySelector('.navbar');
+        const mc = document.querySelector('.main-content');
+        if (nb && mc) mc.style.paddingTop = nb.offsetHeight + 'px';
+    }
+    window.addEventListener('load', adjustMainPadding);
+    window.addEventListener('resize', adjustMainPadding);
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+const heroSwiper = new Swiper('.heroSwiper', {
+    loop: true, speed: 1000,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    effect: 'fade', fadeEffect: { crossFade: true },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.stat-number');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / (2000 / 16);
+                let current = 0;
+                const update = () => {
+                    current += increment;
+                    if (current < target) { counter.textContent = Math.floor(current); requestAnimationFrame(update); }
+                    else { counter.textContent = target + '+'; }
+                };
+                update();
+                observer.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(c => observer.observe(c));
+});
+</script>
+</body>
+</html>

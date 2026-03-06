@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Université des Anges</title>
+<meta name="description" content="Contactez l'Université des Anges">
+<link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="./static/css/custom.css">
+<style>
+@media (max-width: 1024px) {
+    :root { --navbar-height-mobile: 60px; }
+    .navbar { height: var(--navbar-height-mobile); padding: 0; }
+    .navbar .container { height: 100%; padding: 0 0.5rem; }
+    .navbar-brand { height: 100%; flex: 1; max-width: calc(100% - 60px); }
+    .navbar-logo { padding: 0.5rem 0; gap: 0.3rem; flex-shrink: 1; }
+    .logo-image { height: 30px; }
+    .logo-text strong { font-size: 0.8rem; white-space: nowrap; }
+    .logo-text small { display: none; }
+    .navbar-burger { height: var(--navbar-height-mobile); width: 60px; padding: 0; margin-left: auto; display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: rgba(79,70,229,0.08); border: none; border-radius: 8px; cursor: pointer; flex-shrink: 0; }
+    .navbar-burger span { width: 26px; height: 3px; background-color: #4f46e5; display: block; border-radius: 3px; transition: all 0.3s ease; }
+    .navbar-burger.is-active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .navbar-burger.is-active span:nth-child(2) { opacity: 0; }
+    .navbar-burger.is-active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    .navbar-menu { position: fixed; top: var(--navbar-height-mobile); left: 0; right: 0; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; }
+    .navbar-menu.is-active { max-height: calc(100vh - var(--navbar-height-mobile)); overflow-y: auto; opacity: 1; visibility: visible; padding: 1rem 0; }
+    .navbar-end { display: flex; flex-direction: column; }
+    .navbar-item { padding: 0.875rem 1.25rem; }
+    .navbar-cta { margin: 0.75rem 1.25rem; width: calc(100% - 2.5rem); }
+    .main-content { padding-top: var(--navbar-height-mobile); }
+}
+.scroll-top-btn { position: fixed; bottom: 80px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 2px solid white; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 6px 20px rgba(102,126,234,0.5); transition: all 0.3s ease; }
+.scroll-top-btn:hover { transform: translateY(-5px) scale(1.1); }
+.scroll-top-btn .material-icons { color: white; font-size: 28px; }
+@media(max-width:768px){ .footer-top{padding:2.5rem 0 1.5rem;} .footer-brand{text-align:center;} .footer-logo{margin:0 auto;} .footer-bottom .columns{flex-direction:column;} .footer-bottom .column{text-align:center!important;} }
+</style>
+</head>
+<body>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="./index.html">
+                <img src="./static/images/logo.svg" alt="Université des Anges" class="logo-image">
+                <span class="logo-text"><strong>UNIVERSITÉ</strong><small>des Anges</small></span>
+            </a>
+            <button class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end"><a class="navbar-item" href="./index.html"><span class="icon"><span class="material-icons">home</span></span><span>Accueil</span></a>
+<a class="navbar-item" href="./actualites/index.html"><span class="icon"><span class="material-icons">article</span></span><span>Actualités</span></a>
+<a class="navbar-item" href="./formations/index.html"><span class="icon"><span class="material-icons">school</span></span><span>Formations</span></a>
+<a class="navbar-item" href="./a-propos.html"><span class="icon"><span class="material-icons">info</span></span><span>À propos</span></a>
+<a class="navbar-item navbar-cta is-active" href="./contact.html"><span class="icon"><span class="material-icons">mail</span></span><span>Contact</span></a>
+</div>
+        </div>
+    </div>
+</nav>
+<main class="main-content">
+
+<section class="hero is-primary"><div class="hero-body"><div class="container">
+    <h1 class="title is-1">Contactez-nous</h1>
+    <p class="subtitle is-4">Nous sommes à votre écoute</p>
+</div></div></section>
+
+<section class="section"><div class="container"><div class="columns">
+    <div class="column is-8"><div class="box">
+        <h2 class="title is-3">Envoyez-nous un message</h2>
+        <p class="mb-5">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+        <div id="form-success" class="notification is-success is-light" style="display:none;">
+            <span class="icon"><span class="material-icons">check_circle</span></span>
+            <strong>Message envoyé !</strong> Nous vous répondrons dans les plus brefs délais.
+        </div>
+        <form id="contactForm">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field"><label class="label">Nom complet *</label>
+                    <div class="control has-icons-left"><input class="input" type="text" name="nom" placeholder="Votre nom" required>
+                    <span class="icon is-small is-left"><span class="material-icons">person</span></span></div></div>
+                </div>
+                <div class="column is-6">
+                    <div class="field"><label class="label">Email *</label>
+                    <div class="control has-icons-left"><input class="input" type="email" name="email" placeholder="votre@email.com" required>
+                    <span class="icon is-small is-left"><span class="material-icons">mail</span></span></div></div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field"><label class="label">Téléphone</label>
+                    <div class="control has-icons-left"><input class="input" type="tel" name="telephone" placeholder="+225 XX XX XX XX XX">
+                    <span class="icon is-small is-left"><span class="material-icons">phone</span></span></div></div>
+                </div>
+                <div class="column is-6">
+                    <div class="field"><label class="label">Sujet *</label>
+                    <div class="control"><div class="select is-fullwidth">
+                        <select name="sujet" required>
+                            <option value="">Choisir un sujet</option>
+                            <option>Demande d'information</option>
+                            <option>Inscription</option>
+                            <option>Partenariat</option>
+                            <option>Réclamation</option>
+                            <option>Autre</option>
+                        </select>
+                    </div></div></div>
+                </div>
+            </div>
+            <div class="field"><label class="label">Message *</label>
+            <div class="control"><textarea class="textarea" name="message" placeholder="Votre message..." rows="6" required></textarea></div></div>
+            <div class="field"><div class="control">
+                <button class="button is-primary is-medium is-fullwidth" type="submit">
+                    <span class="icon"><span class="material-icons">send</span></span>
+                    <span>Envoyer le message</span>
+                </button>
+            </div></div>
+        </form>
+    </div></div>
+
+    <div class="column is-4"><div class="box has-background-primary has-text-white">
+        <h3 class="title is-4 has-text-white">Informations de contact</h3>
+        <div class="content">
+            <div class="mb-4"><p class="has-text-weight-semibold mb-2"><span class="icon-text"><span class="icon"><span class="material-icons">location_on</span></span><span>Adresse</span></span></p><p>Cocody, Boulevard Latrille<br>Abidjan, Côte d'Ivoire</p></div>
+            <div class="mb-4"><p class="has-text-weight-semibold mb-2"><span class="icon-text"><span class="icon"><span class="material-icons">phone</span></span><span>Téléphone</span></span></p><p>+225 27 XX XX XX XX</p></div>
+            <div class="mb-4"><p class="has-text-weight-semibold mb-2"><span class="icon-text"><span class="icon"><span class="material-icons">mail</span></span><span>Email</span></span></p><p>contact@universite-des-anges.ci</p></div>
+            <div class="mb-4"><p class="has-text-weight-semibold mb-2"><span class="icon-text"><span class="icon"><span class="material-icons">schedule</span></span><span>Horaires</span></span></p><p>Lundi - Vendredi : 8h - 17h<br>Samedi : 8h - 12h</p></div>
+        </div>
+    </div></div>
+</div></div></section>
+
+<!-- Map/Location section -->
+<section class="section pt-0" style="padding-bottom:0;">
+    <div style="height:300px;overflow:hidden;position:relative;">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80" alt="Abidjan" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.6);">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+            <div class="box has-text-centered" style="background:rgba(255,255,255,0.95);border-radius:16px;padding:2rem;max-width:400px;">
+                <span class="material-icons" style="font-size:3rem;color:#4F46E5;">location_on</span>
+                <h3 class="title is-4 mt-2">Cocody, Boulevard Latrille</h3>
+                <p class="has-text-grey">Abidjan, Côte d'Ivoire</p>
+                <a href="https://maps.google.com/?q=Cocody+Abidjan" target="_blank" class="button is-primary mt-3 is-small">
+                    <span class="icon"><span class="material-icons">map</span></span>
+                    <span>Voir sur Google Maps</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<footer class="footer-premium">
+    <div class="footer-top"><div class="container"><div class="columns">
+        <div class="column is-4-tablet">
+            <div class="footer-brand">
+                <img src="./static/images/logo.svg" alt="Université des Anges" class="footer-logo">
+                <h4 class="title is-5 has-text-white mt-3">Université des Anges</h4>
+                <p class="footer-tagline">Excellence et innovation au service de la formation et du développement.</p>
+                <div class="social-links mt-4">
+                    <a href="#" class="social-link" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><span class="material-icons">send</span></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><span class="material-icons">work</span></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="column is-3-tablet">
+            <h4 class="footer-title">Liens rapides</h4>
+            <ul class="footer-links">
+                <li><a href="./index.html"><span class="material-icons">chevron_right</span> Accueil</a></li>
+                <li><a href="./actualites/index.html"><span class="material-icons">chevron_right</span> Actualités</a></li>
+                <li><a href="./formations/index.html"><span class="material-icons">chevron_right</span> Formations</a></li>
+                <li><a href="./a-propos.html"><span class="material-icons">chevron_right</span> À propos</a></li>
+                <li><a href="./contact.html"><span class="material-icons">chevron_right</span> Contact</a></li>
+            </ul>
+        </div>
+        <div class="column is-2-tablet">
+            <h4 class="footer-title">Ressources</h4>
+            <ul class="footer-links">
+                <li><a href="#"><span class="material-icons">chevron_right</span> FAQ</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Support</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Blog</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Portail</a></li>
+            </ul>
+        </div>
+        <div class="column is-3-tablet">
+            <h4 class="footer-title">Contact</h4>
+            <ul class="footer-contact">
+                <li><span class="material-icons">location_on</span><span>Cocody, Boulevard Latrille<br>Abidjan, Côte d'Ivoire</span></li>
+                <li><span class="material-icons">phone</span><span>+225 27 XX XX XX XX</span></li>
+                <li><span class="material-icons">mail</span><span>contact@universite-des-anges.ci</span></li>
+                <li><span class="material-icons">schedule</span><span>Lun - Ven : 8h - 17h<br>Samedi : 8h - 12h</span></li>
+            </ul>
+        </div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="columns is-vcentered is-mobile">
+        <div class="column"><p class="copyright">&copy; 2026 Université des Anges. Tous droits réservés.</p></div>
+        <div class="column has-text-right">
+            <a href="./mentions-legales.html" class="footer-legal">Mentions légales</a>
+            <span class="footer-separator">|</span>
+            <a href="./politique-confidentialite.html" class="footer-legal">Politique de confidentialité</a>
+        </div>
+    </div></div></div>
+</footer>
+<button id="scrollTop" class="scroll-top-btn" aria-label="Retour en haut"><span class="material-icons">arrow_upward</span></button>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.getElementById('navbarMenu');
+    if (burger && menu) {
+        burger.addEventListener('click', (e) => {
+            e.preventDefault();
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+            if (window.innerWidth <= 1024) document.body.style.overflow = menu.classList.contains('is-active') ? 'hidden' : '';
+        });
+        menu.querySelectorAll('.navbar-item').forEach(l => l.addEventListener('click', () => {
+            if (window.innerWidth <= 1024) { burger.classList.remove('is-active'); menu.classList.remove('is-active'); document.body.style.overflow = ''; }
+        }));
+    }
+    const btn = document.getElementById('scrollTop');
+    if (btn) btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    const nb = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 50));
+    function adj() { const nb=document.querySelector('.navbar'),mc=document.querySelector('.main-content'); if(nb&&mc) mc.style.paddingTop=nb.offsetHeight+'px'; }
+    window.addEventListener('load', adj); window.addEventListener('resize', adj);
+});
+</script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'flex';
+    this.reset();
+    setTimeout(() => { document.getElementById('form-success').style.display = 'none'; }, 5000);
+});
+</script>
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actualités - Université des Anges</title>
+<meta name="description" content="Toutes nos actualités et événements">
+<link rel="icon" type="image/svg+xml" href="../static/images/favicon.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/custom.css">
+<style>
+@media (max-width: 1024px) {
+    :root { --navbar-height-mobile: 60px; }
+    .navbar { height: var(--navbar-height-mobile); padding: 0; }
+    .navbar .container { height: 100%; padding: 0 0.5rem; }
+    .navbar-brand { height: 100%; flex: 1; max-width: calc(100% - 60px); }
+    .navbar-logo { padding: 0.5rem 0; gap: 0.3rem; flex-shrink: 1; }
+    .logo-image { height: 30px; }
+    .logo-text strong { font-size: 0.8rem; white-space: nowrap; }
+    .logo-text small { display: none; }
+    .navbar-burger { height: var(--navbar-height-mobile); width: 60px; padding: 0; margin-left: auto; display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: rgba(79,70,229,0.08); border: none; border-radius: 8px; cursor: pointer; flex-shrink: 0; }
+    .navbar-burger span { width: 26px; height: 3px; background-color: #4f46e5; display: block; border-radius: 3px; transition: all 0.3s ease; }
+    .navbar-burger.is-active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .navbar-burger.is-active span:nth-child(2) { opacity: 0; }
+    .navbar-burger.is-active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    .navbar-menu { position: fixed; top: var(--navbar-height-mobile); left: 0; right: 0; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; }
+    .navbar-menu.is-active { max-height: calc(100vh - var(--navbar-height-mobile)); overflow-y: auto; opacity: 1; visibility: visible; padding: 1rem 0; }
+    .navbar-end { display: flex; flex-direction: column; }
+    .navbar-item { padding: 0.875rem 1.25rem; }
+    .navbar-cta { margin: 0.75rem 1.25rem; width: calc(100% - 2.5rem); }
+    .main-content { padding-top: var(--navbar-height-mobile); }
+}
+.scroll-top-btn { position: fixed; bottom: 80px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 2px solid white; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 6px 20px rgba(102,126,234,0.5); transition: all 0.3s ease; }
+.scroll-top-btn:hover { transform: translateY(-5px) scale(1.1); }
+.scroll-top-btn .material-icons { color: white; font-size: 28px; }
+@media(max-width:768px){ .footer-top{padding:2.5rem 0 1.5rem;} .footer-brand{text-align:center;} .footer-logo{margin:0 auto;} .footer-bottom .columns{flex-direction:column;} .footer-bottom .column{text-align:center!important;} }
+</style>
+</head>
+<body>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="../index.html">
+                <img src="../static/images/logo.svg" alt="Université des Anges" class="logo-image">
+                <span class="logo-text"><strong>UNIVERSITÉ</strong><small>des Anges</small></span>
+            </a>
+            <button class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end"><a class="navbar-item" href="../index.html"><span class="icon"><span class="material-icons">home</span></span><span>Accueil</span></a>
+<a class="navbar-item is-active" href="../actualites/index.html"><span class="icon"><span class="material-icons">article</span></span><span>Actualités</span></a>
+<a class="navbar-item" href="../formations/index.html"><span class="icon"><span class="material-icons">school</span></span><span>Formations</span></a>
+<a class="navbar-item" href="../a-propos.html"><span class="icon"><span class="material-icons">info</span></span><span>À propos</span></a>
+<a class="navbar-item navbar-cta" href="../contact.html"><span class="icon"><span class="material-icons">mail</span></span><span>Contact</span></a>
+</div>
+        </div>
+    </div>
+</nav>
+<main class="main-content">
+
+<section class="hero is-primary"><div class="hero-body"><div class="container">
+    <h1 class="title is-1">Actualités</h1>
+    <p class="subtitle is-4">Toutes nos dernières nouvelles et événements</p>
+</div></div></section>
+<section class="section pt-5 pb-3"><div class="container">
+    <div class="tabs is-centered is-boxed"><ul>
+        <li class="is-active"><a href="./index.html">Toutes</a></li>
+        <li><a href="./index.html">Événements</a></li>
+        <li><a href="./index.html">Partenariats</a></li>
+        <li><a href="./index.html">Formations</a></li>
+        <li><a href="./index.html">Annonces</a></li>
+    </ul></div>
+</div></section>
+<section class="section pt-3"><div class="container">
+    <div class="columns is-multiline">
+<div class="column is-6-tablet is-4-desktop"><div class="card hover-lift">
+    <div class="card-image"><figure class="image is-16by9">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80" alt="Rentrée académique 2025-2026" style="width:100%;height:100%;object-fit:cover;">
+    </figure></div>
+    <div class="card-content">
+        <span class="tag is-danger mb-3">Annonce</span>
+        <p class="title is-5">Rentrée académique 2025-2026</p>
+        <p class="subtitle is-6 has-text-grey">
+            <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>15 Sep 2025</span></span>
+            <span class="ml-2"><span class="icon-text"><span class="icon"><span class="material-icons">person</span></span><span>Direction</span></span></span>
+        </p>
+        <div class="content">L'Université des Anges ouvre ses portes pour la nouvelle année académique avec de nouvelles formations et un campus numérique rénové.</div>
+        <a href="./rentree-academique-2025.html" class="button is-primary is-fullwidth">Lire la suite <span class="icon"><span class="material-icons">chevron_right</span></span></a>
+    </div>
+</div></div>
+<div class="column is-6-tablet is-4-desktop"><div class="card hover-lift">
+    <div class="card-image"><figure class="image is-16by9">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="Partenariat avec l'Université de Lyon" style="width:100%;height:100%;object-fit:cover;">
+    </figure></div>
+    <div class="card-content">
+        <span class="tag is-success mb-3">Partenariat</span>
+        <p class="title is-5">Partenariat avec l'Université de Lyon</p>
+        <p class="subtitle is-6 has-text-grey">
+            <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>02 Oct 2025</span></span>
+            <span class="ml-2"><span class="icon-text"><span class="icon"><span class="material-icons">person</span></span><span>Relations Internationales</span></span></span>
+        </p>
+        <div class="content">Un accord de coopération académique historique a été signé permettant des échanges d'étudiants et de professeurs entre les deux universités.</div>
+        <a href="./partenariat-lyon.html" class="button is-primary is-fullwidth">Lire la suite <span class="icon"><span class="material-icons">chevron_right</span></span></a>
+    </div>
+</div></div>
+<div class="column is-6-tablet is-4-desktop"><div class="card hover-lift">
+    <div class="card-image"><figure class="image is-16by9">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Forum des métiers du numérique" style="width:100%;height:100%;object-fit:cover;">
+    </figure></div>
+    <div class="card-content">
+        <span class="tag is-info mb-3">Événement</span>
+        <p class="title is-5">Forum des métiers du numérique</p>
+        <p class="subtitle is-6 has-text-grey">
+            <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>20 Nov 2025</span></span>
+            <span class="ml-2"><span class="icon-text"><span class="icon"><span class="material-icons">person</span></span><span>Service Carrières</span></span></span>
+        </p>
+        <div class="content">Rencontrez les grandes entreprises tech d'Afrique et d'Europe lors de notre forum annuel dédié aux carrières dans le numérique.</div>
+        <a href="./forum-metiers-numerique.html" class="button is-primary is-fullwidth">Lire la suite <span class="icon"><span class="material-icons">chevron_right</span></span></a>
+    </div>
+</div></div>
+<div class="column is-6-tablet is-4-desktop"><div class="card hover-lift">
+    <div class="card-image"><figure class="image is-16by9">
+        <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="Nouvelles formations en Intelligence Artificielle" style="width:100%;height:100%;object-fit:cover;">
+    </figure></div>
+    <div class="card-content">
+        <span class="tag is-warning mb-3">Formation</span>
+        <p class="title is-5">Nouvelles formations en Intelligence Artificielle</p>
+        <p class="subtitle is-6 has-text-grey">
+            <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>10 Jan 2026</span></span>
+            <span class="ml-2"><span class="icon-text"><span class="icon"><span class="material-icons">person</span></span><span>Direction Pédagogique</span></span></span>
+        </p>
+        <div class="content">Deux nouvelles formations IA et Machine Learning sont lancées pour répondre à la demande croissante du marché de l'emploi africain.</div>
+        <a href="./formations-intelligence-artificielle.html" class="button is-primary is-fullwidth">Lire la suite <span class="icon"><span class="material-icons">chevron_right</span></span></a>
+    </div>
+</div></div>
+<div class="column is-6-tablet is-4-desktop"><div class="card hover-lift">
+    <div class="card-image"><figure class="image is-16by9">
+        <img src="https://images.unsplash.com/photo-1627556592933-35b8a5b2523c?w=800&q=80" alt="Cérémonie de remise des diplômes 2025" style="width:100%;height:100%;object-fit:cover;">
+    </figure></div>
+    <div class="card-content">
+        <span class="tag is-info mb-3">Événement</span>
+        <p class="title is-5">Cérémonie de remise des diplômes 2025</p>
+        <p class="subtitle is-6 has-text-grey">
+            <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>15 Fév 2026</span></span>
+            <span class="ml-2"><span class="icon-text"><span class="icon"><span class="material-icons">person</span></span><span>Direction</span></span></span>
+        </p>
+        <div class="content">La 5e promotion de l'Université des Anges a célébré l'obtention de ses diplômes lors d'une cérémonie émouvante au Grand Hôtel d'Abidjan.</div>
+        <a href="./ceremonie-diplomes-2025.html" class="button is-primary is-fullwidth">Lire la suite <span class="icon"><span class="material-icons">chevron_right</span></span></a>
+    </div>
+</div></div>
+<div class="column is-6-tablet is-4-desktop"><div class="card hover-lift">
+    <div class="card-image"><figure class="image is-16by9">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Ouverture des inscriptions 2026-2027" style="width:100%;height:100%;object-fit:cover;">
+    </figure></div>
+    <div class="card-content">
+        <span class="tag is-danger mb-3">Annonce</span>
+        <p class="title is-5">Ouverture des inscriptions 2026-2027</p>
+        <p class="subtitle is-6 has-text-grey">
+            <span class="icon-text"><span class="icon"><span class="material-icons">event</span></span><span>01 Mar 2026</span></span>
+            <span class="ml-2"><span class="icon-text"><span class="icon"><span class="material-icons">person</span></span><span>Scolarité</span></span></span>
+        </p>
+        <div class="content">Les inscriptions pour l'année académique 2026-2027 sont désormais ouvertes. Rejoignez notre communauté d'apprenants !</div>
+        <a href="./inscriptions-2026-2027.html" class="button is-primary is-fullwidth">Lire la suite <span class="icon"><span class="material-icons">chevron_right</span></span></a>
+    </div>
+</div></div></div>
+</div></section>
+</main>
+<footer class="footer-premium">
+    <div class="footer-top"><div class="container"><div class="columns">
+        <div class="column is-4-tablet">
+            <div class="footer-brand">
+                <img src="../static/images/logo.svg" alt="Université des Anges" class="footer-logo">
+                <h4 class="title is-5 has-text-white mt-3">Université des Anges</h4>
+                <p class="footer-tagline">Excellence et innovation au service de la formation et du développement.</p>
+                <div class="social-links mt-4">
+                    <a href="#" class="social-link" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><span class="material-icons">send</span></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><span class="material-icons">work</span></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="column is-3-tablet">
+            <h4 class="footer-title">Liens rapides</h4>
+            <ul class="footer-links">
+                <li><a href="../index.html"><span class="material-icons">chevron_right</span> Accueil</a></li>
+                <li><a href="../actualites/index.html"><span class="material-icons">chevron_right</span> Actualités</a></li>
+                <li><a href="../formations/index.html"><span class="material-icons">chevron_right</span> Formations</a></li>
+                <li><a href="../a-propos.html"><span class="material-icons">chevron_right</span> À propos</a></li>
+                <li><a href="../contact.html"><span class="material-icons">chevron_right</span> Contact</a></li>
+            </ul>
+        </div>
+        <div class="column is-2-tablet">
+            <h4 class="footer-title">Ressources</h4>
+            <ul class="footer-links">
+                <li><a href="#"><span class="material-icons">chevron_right</span> FAQ</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Support</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Blog</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Portail</a></li>
+            </ul>
+        </div>
+        <div class="column is-3-tablet">
+            <h4 class="footer-title">Contact</h4>
+            <ul class="footer-contact">
+                <li><span class="material-icons">location_on</span><span>Cocody, Boulevard Latrille<br>Abidjan, Côte d'Ivoire</span></li>
+                <li><span class="material-icons">phone</span><span>+225 27 XX XX XX XX</span></li>
+                <li><span class="material-icons">mail</span><span>contact@universite-des-anges.ci</span></li>
+                <li><span class="material-icons">schedule</span><span>Lun - Ven : 8h - 17h<br>Samedi : 8h - 12h</span></li>
+            </ul>
+        </div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="columns is-vcentered is-mobile">
+        <div class="column"><p class="copyright">&copy; 2026 Université des Anges. Tous droits réservés.</p></div>
+        <div class="column has-text-right">
+            <a href="../mentions-legales.html" class="footer-legal">Mentions légales</a>
+            <span class="footer-separator">|</span>
+            <a href="../politique-confidentialite.html" class="footer-legal">Politique de confidentialité</a>
+        </div>
+    </div></div></div>
+</footer>
+<button id="scrollTop" class="scroll-top-btn" aria-label="Retour en haut"><span class="material-icons">arrow_upward</span></button>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.getElementById('navbarMenu');
+    if (burger && menu) {
+        burger.addEventListener('click', (e) => {
+            e.preventDefault();
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+            if (window.innerWidth <= 1024) document.body.style.overflow = menu.classList.contains('is-active') ? 'hidden' : '';
+        });
+        menu.querySelectorAll('.navbar-item').forEach(l => l.addEventListener('click', () => {
+            if (window.innerWidth <= 1024) { burger.classList.remove('is-active'); menu.classList.remove('is-active'); document.body.style.overflow = ''; }
+        }));
+    }
+    const btn = document.getElementById('scrollTop');
+    if (btn) btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    const nb = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 50));
+    function adj() { const nb=document.querySelector('.navbar'),mc=document.querySelector('.main-content'); if(nb&&mc) mc.style.paddingTop=nb.offsetHeight+'px'; }
+    window.addEventListener('load', adj); window.addEventListener('resize', adj);
+});
+</script>
+
+</body></html>

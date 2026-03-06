@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos - Université des Anges</title>
+<meta name="description" content="Notre histoire, mission et valeurs">
+<link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="./static/css/custom.css">
+<style>
+@media (max-width: 1024px) {
+    :root { --navbar-height-mobile: 60px; }
+    .navbar { height: var(--navbar-height-mobile); padding: 0; }
+    .navbar .container { height: 100%; padding: 0 0.5rem; }
+    .navbar-brand { height: 100%; flex: 1; max-width: calc(100% - 60px); }
+    .navbar-logo { padding: 0.5rem 0; gap: 0.3rem; flex-shrink: 1; }
+    .logo-image { height: 30px; }
+    .logo-text strong { font-size: 0.8rem; white-space: nowrap; }
+    .logo-text small { display: none; }
+    .navbar-burger { height: var(--navbar-height-mobile); width: 60px; padding: 0; margin-left: auto; display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: rgba(79,70,229,0.08); border: none; border-radius: 8px; cursor: pointer; flex-shrink: 0; }
+    .navbar-burger span { width: 26px; height: 3px; background-color: #4f46e5; display: block; border-radius: 3px; transition: all 0.3s ease; }
+    .navbar-burger.is-active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .navbar-burger.is-active span:nth-child(2) { opacity: 0; }
+    .navbar-burger.is-active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    .navbar-menu { position: fixed; top: var(--navbar-height-mobile); left: 0; right: 0; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; }
+    .navbar-menu.is-active { max-height: calc(100vh - var(--navbar-height-mobile)); overflow-y: auto; opacity: 1; visibility: visible; padding: 1rem 0; }
+    .navbar-end { display: flex; flex-direction: column; }
+    .navbar-item { padding: 0.875rem 1.25rem; }
+    .navbar-cta { margin: 0.75rem 1.25rem; width: calc(100% - 2.5rem); }
+    .main-content { padding-top: var(--navbar-height-mobile); }
+}
+.scroll-top-btn { position: fixed; bottom: 80px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 2px solid white; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 6px 20px rgba(102,126,234,0.5); transition: all 0.3s ease; }
+.scroll-top-btn:hover { transform: translateY(-5px) scale(1.1); }
+.scroll-top-btn .material-icons { color: white; font-size: 28px; }
+@media(max-width:768px){ .footer-top{padding:2.5rem 0 1.5rem;} .footer-brand{text-align:center;} .footer-logo{margin:0 auto;} .footer-bottom .columns{flex-direction:column;} .footer-bottom .column{text-align:center!important;} }
+</style>
+</head>
+<body>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="./index.html">
+                <img src="./static/images/logo.svg" alt="Université des Anges" class="logo-image">
+                <span class="logo-text"><strong>UNIVERSITÉ</strong><small>des Anges</small></span>
+            </a>
+            <button class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end"><a class="navbar-item" href="./index.html"><span class="icon"><span class="material-icons">home</span></span><span>Accueil</span></a>
+<a class="navbar-item" href="./actualites/index.html"><span class="icon"><span class="material-icons">article</span></span><span>Actualités</span></a>
+<a class="navbar-item" href="./formations/index.html"><span class="icon"><span class="material-icons">school</span></span><span>Formations</span></a>
+<a class="navbar-item is-active" href="./a-propos.html"><span class="icon"><span class="material-icons">info</span></span><span>À propos</span></a>
+<a class="navbar-item navbar-cta" href="./contact.html"><span class="icon"><span class="material-icons">mail</span></span><span>Contact</span></a>
+</div>
+        </div>
+    </div>
+</nav>
+<main class="main-content">
+
+<section class="hero is-primary"><div class="hero-body"><div class="container">
+    <h1 class="title is-1">À propos</h1>
+    <p class="subtitle is-4">Notre histoire, notre mission, nos valeurs</p>
+</div></div></section>
+
+
+<!-- Visual about section -->
+<div style="position:relative;height:400px;overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80" alt="Campus Université des Anges" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.65);">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(79,70,229,0.3);">
+        <div class="has-text-centered">
+            <p class="title is-2 has-text-white">Un campus d'excellence</p>
+            <p class="subtitle is-5 has-text-white">Fondée en 2020 · Abidjan, Côte d'Ivoire</p>
+        </div>
+    </div>
+</div>
+<section class="section"><div class="container"><div class="content">
+    <h2 class="title is-3">Qui sommes-nous ?</h2>
+    <p class="is-size-5">L'Université des Anges est une université publique pluridisciplinaire de formation à distance, créée pour répondre aux besoins croissants de formation supérieure accessible et de qualité.</p>
+    <div class="columns mt-6">
+        <div class="column"><div class="box has-text-centered"><span class="icon is-large has-text-primary"><span class="material-icons" style="font-size:3rem;">track_changes</span></span><h3 class="title is-4 mt-3">Notre Mission</h3><p>Offrir une formation de qualité accessible à tous, partout et à tout moment.</p></div></div>
+        <div class="column"><div class="box has-text-centered"><span class="icon is-large has-text-primary"><span class="material-icons" style="font-size:3rem;">visibility</span></span><h3 class="title is-4 mt-3">Notre Vision</h3><p>Devenir une référence africaine en matière de formation à distance et d'innovation pédagogique.</p></div></div>
+        <div class="column"><div class="box has-text-centered"><span class="icon is-large has-text-primary"><span class="material-icons" style="font-size:3rem;">favorite</span></span><h3 class="title is-4 mt-3">Nos Valeurs</h3><p>Excellence, Innovation, Accessibilité, Engagement et Intégrité.</p></div></div>
+    </div>
+    
+<div class="columns mt-4 mb-6">
+    <div class="column"><div style="height:200px;overflow:hidden;border-radius:12px;"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="Étudiants" style="width:100%;height:100%;object-fit:cover;"></div><p class="has-text-centered has-text-grey mt-2 is-size-7">Nos étudiants</p></div>
+    <div class="column"><div style="height:200px;overflow:hidden;border-radius:12px;"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Équipe pédagogique" style="width:100%;height:100%;object-fit:cover;"></div><p class="has-text-centered has-text-grey mt-2 is-size-7">Notre équipe</p></div>
+    <div class="column"><div style="height:200px;overflow:hidden;border-radius:12px;"><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80" alt="Bibliothèque" style="width:100%;height:100%;object-fit:cover;"></div><p class="has-text-centered has-text-grey mt-2 is-size-7">Bibliothèque virtuelle</p></div>
+</div><h2 class="title is-3 mt-6">Nos Atouts</h2>
+    <div class="columns">
+        <div class="column"><ul>
+            <li><span class="icon-text"><span class="material-icons has-text-success">check_circle</span><span>Formation 100% en ligne</span></span></li>
+            <li><span class="icon-text"><span class="material-icons has-text-success">check_circle</span><span>Diplômes reconnus par l'État</span></span></li>
+            <li><span class="icon-text"><span class="material-icons has-text-success">check_circle</span><span>Accompagnement personnalisé</span></span></li>
+            <li><span class="icon-text"><span class="material-icons has-text-success">check_circle</span><span>Campus numérique moderne</span></span></li>
+        </ul></div>
+        <div class="column"><ul>
+            <li><span class="icon-text"><span class="material-icons has-text-success">check_circle</span><span>Enseignants qualifiés et expérimentés</span></span></li>
+            <li><span class="icon-text"><span class="material-icons has-text-success">check_circle</span><span>Partenariats internationaux</span></span></li>
+            <li><span class="icon-text"><span class="material-icons has-text-success">check_circle</span><span>Bibliothèque virtuelle riche</span></span></li>
+            <li><span class="icon-text"><span class="material-icons has-text-success">check_circle</span><span>Tarifs abordables</span></span></li>
+        </ul></div>
+    </div>
+</div></div></section>
+
+<section class="section has-background-light"><div class="container has-text-centered">
+    <h2 class="title is-3">Rejoignez-nous !</h2>
+    <p class="subtitle is-5 mb-5">Faites le premier pas vers votre avenir</p>
+    <a href="./contact.html" class="button is-primary is-large"><span class="icon"><span class="material-icons">mail</span></span><span>Nous contacter</span></a>
+</div></section>
+</main>
+<footer class="footer-premium">
+    <div class="footer-top"><div class="container"><div class="columns">
+        <div class="column is-4-tablet">
+            <div class="footer-brand">
+                <img src="./static/images/logo.svg" alt="Université des Anges" class="footer-logo">
+                <h4 class="title is-5 has-text-white mt-3">Université des Anges</h4>
+                <p class="footer-tagline">Excellence et innovation au service de la formation et du développement.</p>
+                <div class="social-links mt-4">
+                    <a href="#" class="social-link" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><span class="material-icons">send</span></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><span class="material-icons">work</span></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="column is-3-tablet">
+            <h4 class="footer-title">Liens rapides</h4>
+            <ul class="footer-links">
+                <li><a href="./index.html"><span class="material-icons">chevron_right</span> Accueil</a></li>
+                <li><a href="./actualites/index.html"><span class="material-icons">chevron_right</span> Actualités</a></li>
+                <li><a href="./formations/index.html"><span class="material-icons">chevron_right</span> Formations</a></li>
+                <li><a href="./a-propos.html"><span class="material-icons">chevron_right</span> À propos</a></li>
+                <li><a href="./contact.html"><span class="material-icons">chevron_right</span> Contact</a></li>
+            </ul>
+        </div>
+        <div class="column is-2-tablet">
+            <h4 class="footer-title">Ressources</h4>
+            <ul class="footer-links">
+                <li><a href="#"><span class="material-icons">chevron_right</span> FAQ</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Support</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Blog</a></li>
+                <li><a href="#"><span class="material-icons">chevron_right</span> Portail</a></li>
+            </ul>
+        </div>
+        <div class="column is-3-tablet">
+            <h4 class="footer-title">Contact</h4>
+            <ul class="footer-contact">
+                <li><span class="material-icons">location_on</span><span>Cocody, Boulevard Latrille<br>Abidjan, Côte d'Ivoire</span></li>
+                <li><span class="material-icons">phone</span><span>+225 27 XX XX XX XX</span></li>
+                <li><span class="material-icons">mail</span><span>contact@universite-des-anges.ci</span></li>
+                <li><span class="material-icons">schedule</span><span>Lun - Ven : 8h - 17h<br>Samedi : 8h - 12h</span></li>
+            </ul>
+        </div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="columns is-vcentered is-mobile">
+        <div class="column"><p class="copyright">&copy; 2026 Université des Anges. Tous droits réservés.</p></div>
+        <div class="column has-text-right">
+            <a href="./mentions-legales.html" class="footer-legal">Mentions légales</a>
+            <span class="footer-separator">|</span>
+            <a href="./politique-confidentialite.html" class="footer-legal">Politique de confidentialité</a>
+        </div>
+    </div></div></div>
+</footer>
+<button id="scrollTop" class="scroll-top-btn" aria-label="Retour en haut"><span class="material-icons">arrow_upward</span></button>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.getElementById('navbarMenu');
+    if (burger && menu) {
+        burger.addEventListener('click', (e) => {
+            e.preventDefault();
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+            if (window.innerWidth <= 1024) document.body.style.overflow = menu.classList.contains('is-active') ? 'hidden' : '';
+        });
+        menu.querySelectorAll('.navbar-item').forEach(l => l.addEventListener('click', () => {
+            if (window.innerWidth <= 1024) { burger.classList.remove('is-active'); menu.classList.remove('is-active'); document.body.style.overflow = ''; }
+        }));
+    }
+    const btn = document.getElementById('scrollTop');
+    if (btn) btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    const nb = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 50));
+    function adj() { const nb=document.querySelector('.navbar'),mc=document.querySelector('.main-content'); if(nb&&mc) mc.style.paddingTop=nb.offsetHeight+'px'; }
+    window.addEventListener('load', adj); window.addEventListener('resize', adj);
+});
+</script>
+
+</body></html>
